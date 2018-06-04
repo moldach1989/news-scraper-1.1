@@ -1,0 +1,11 @@
+{
+    "development": {
+        "MONGODB_URI": "mongodb://localhost/iotscrape_db"
+    },
+    "test": {
+        "MONGODB_URI": "NOT_USED_IN_THIS_APPLICATION"
+    },
+    "production": {
+        "MONGODB_URI": "mongodb://heroku_fz49z41v:ev1ccvb8o1i0rr4106arecvj34@ds157479.mlab.com:57479/heroku_fz49z41v"
+    }
+}

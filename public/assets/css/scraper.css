@@ -1,0 +1,271 @@
+/***********************************************/
+
+
+/* The following class will outline all 
+   containers, a debugging and learning tool - 
+
+* {
+    border: 1px solid red !important;
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*/
+
+body { 
+    padding-top: 100px; 
+}
+
+.brand-img {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background: url("/assets/img/scraper-yellow.png") no-repeat;
+}
+
+.brand-img:hover {
+    background: url("/assets/img/scraper-green.png") no-repeat;
+}
+
+
+.navbar-sitetitle {
+    color: hsl(120, 100%, 50%) !important;
+}
+
+.origin {
+    text-align: center;
+    display: inline-block;
+    position: relative;
+}
+
+ul.nav li a, ul.nav li a:visited {
+    color: #00FFFF !important;
+}
+
+ul.nav li a:hover, ul.nav li a:active {
+    color: #00FF00 !important;
+}
+
+ul.nav li.active a {
+    color: #FFFF00 !important;
+}
+
+.hidden-input { 
+    display: none; 
+}
+
+ul.nav li form button {
+    color: #00FFFF !important;
+}
+
+ul.nav li form button:hover, ul.nav li form button:active {
+    color: #00FF00 !important;
+}
+
+
+/*
+    A general purpose class for resetting previously applied
+    styles. Currently it's only used in the dynamic HTML to
+    remove styling from <i>, which is used as a dynamic text
+    container that is accessed via class names through jQuery
+*/
+.clear {
+    font-style: normal;
+}
+
+
+/*
+    Change Mouse Pointer on Hover
+*/
+.pointer {
+    cursor: pointer;
+}
+
+
+/*
+    mouse over high-lighting
+*/
+.pointer:hover {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+
+/*
+    Center Text Horizontally
+*/
+.center {
+    text-align: center;
+}
+
+.block-centered{
+    margin: 0 auto;
+    float: none;
+}
+
+/*
+    Element Hide/Show - The class is either added or 
+    removed via jQuery as needed.
+*/
+.element-hide {
+    display: none;
+    visibility: hidden;
+}
+
+.element-show {
+    display: block;
+    visibility: visible;
+}
+
+
+/*
+    Fixed position and top most element, page
+    content will scroll behind it.
+*/
+.fixed-row {
+    background-color: #ddd;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+}
+
+
+/*
+    Dynamic Message Styling
+
+*/
+.dynamic-msg {
+    font-weight: bold;
+}
+
+
+/*
+    User Error Message Styling
+*/
+.error-msg {
+    color: red;
+    font-style: none;
+}
+
+
+/*
+    User Default Message Styling
+*/
+.default-msg {
+    color: black;
+    font-style: none;
+}
+
+
+/*
+    User Wait Message Styling
+*/
+.wait-msg {
+    color: blue;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+
+/*
+    Usually part of a label belonging to and input tag. 
+    Also intended to inherit the color specified by a prior
+    class or property.
+*/
+.info-msg {
+    font-weight: bolder;
+}
+
+.info-msg-small {
+    font-size: small;
+    font-weight: bolder;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.demo-body {
+    margin-top: 125px;
+}
+
+.demo-section {
+    margin: 10px;
+}
+
+.side-pad {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+/*
+    Site specific CSS, everything above is somewhat
+    generic.
+*/
+.form-field {
+    width: 100%;
+    max-width: 300px;
+}
+
+.form-submit {
+    position: relative;
+    padding-top: 75px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+/*
+Sets the height to 80/100ths of the viewport.
+*/
+.modal-dialog {
+    max-height: 80vh;
+}
+
+.modal-image {
+    width: 128px; 
+    height: 128px;
+}
+
+
+.xtooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.xtooltip .xtooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #E5E5E5;
+    color: #000000;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+
+    transition: opacity 1s;
+}
+
+.xtooltip .xtooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.xtooltip:hover .xtooltiptext {
+    visibility: visible;
+    opacity: 1;
+    z-index: 2147483647;
+}
+

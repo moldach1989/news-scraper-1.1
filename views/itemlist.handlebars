@@ -1,0 +1,80 @@
+        <!-- Navbar START -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a class="navbar-brand" href="/index"><img class="brand-img" alt="Brand" src="/assets/img/scraper-green.png"></a></li>
+                        <li>
+                            <div class="xtooltip">
+                                <a class="navbar-brand" href="/index"><h4>{{heading}}</h4></a>
+                                <span class="xtooltiptext" style="bottom: -85%;">Return to the main page.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar-header">
+                    <ul class="nav navbar-nav">
+                        <li><a class="active navbar-brand" href="{{origin}}" target="_blank"><h4>Scraping from : {{origin}}</h4></a></li>
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><form class="navbar-form navbar-right" method="post" target="_self" action="/api/scrape">
+                            <div class="xtooltip">
+                                <button type="submit" class="btn btn-link navbar-brand">New Scrape</button>
+                                <span class="xtooltiptext" style="bottom: -75%;">Initiate a scrape to look for new items.</span>
+                            </div>
+                            <div class="form-group hidden-input">
+                            {{#each issues}}
+                                <input id="issueID{{@index}}" name="issueID{{@index}}" type="hidden" value="{{this._id}}">
+                                <input id="issueNAME{{@index}}" name="issueNAME{{@index}}" type="hidden" value="{{this.issue}}">
+                            {{/each}}
+                            </div>
+                        </form></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Issue Title START -->
+        <div class="row center">
+            <div class="col-md-3 col-sm-3"></div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <h3>{{issue}}</h3>
+            </div>
+            <div class="col-md-3 col-sm-3"></div>
+        </div>
+        <!-- Issue Title END -->
+        <!-- Item Table START -->
+        <div class="row">
+            <div class="col-md-2 col-sm-2"></div>
+            <div class="col-md-8 col-sm-8 col-xs-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Title</th>
+                        </tr>
+                    </thead>
+                    <tbody id="itemtable">
+                    {{#each items}}
+                        <tr>
+                            <form method="post" target="_self" action="/api/view">
+                                <input id="itemID" name="itemID" type="hidden" value="{{this._id}}">
+                                <input id="issueselect" name="issueselect" type="hidden" value="{{@root.issueselect}}">
+                                <input id="issue" name="issue" type="hidden" value="{{@root.issue}}">
+                                <td style="vertical-align:middle">{{this.category}}</td>
+                                <td>
+                                    <div class="xtooltip">
+                                        <button type="submit" class="btn btn-link" style="padding:0px 0px">{{this.title}}</button>
+                                        <span class="xtooltiptext">View This Item.</span>
+                                    <div>
+                                </td>
+                            </form>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-2 col-sm-2"></div>
+        </div>
+        <!-- Item Table END -->
